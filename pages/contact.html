@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Cho phép responsive trên điện thoại -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liên hệ - Trần Thái Hoàng Phát</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- File CSS chính + CSS cho các thành phần (form) -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+  <!-- Nút chuyển dark mode đặt ở góc trên bên phải -->
+  <button
+    id="themeToggle"
+    class="theme-toggle"
+    type="button"
+    aria-label="Chuyển chế độ sáng/tối"
+    title="Chuyển chế độ sáng/tối"
+  >
+    <span class="icon-sun" aria-hidden="true">☀️</span>
+    <span class="icon-moon" aria-hidden="true">🌙</span>
+  </button>
+
+  <!-- Thanh điều hướng -->
+  <header class="site-header">
+    <nav class="nav-menu">
+      <a class="nav-brand" href="../index.html">Hoàng Phát</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">Giới thiệu</a></li>
+        <li><a href="../index.html#hobbies">Sở thích</a></li>
+        <li><a href="../index.html#projects">Dự án</a></li>
+        <li><a href="contact.html" class="nav-active">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Phần liên hệ -->
+    <section class="section contact-section">
+      <h2 class="section-title">Liên hệ</h2>
+      <p class="contact-intro">
+        Bạn muốn hợp tác hoặc trao đổi? Hãy để lại lời nhắn, mình sẽ phản hồi sớm.
+      </p>
+
+      <!-- Form liên hệ. novalidate để tự xử lý validate bằng JS -->
+      <form id="contactForm" class="contact-form" novalidate>
+        <!-- Trường: Họ tên -->
+        <div class="form-group">
+          <label class="form-label" for="fullName">Họ tên <span class="required">*</span></label>
+          <input
+            class="form-input"
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Nguyễn Văn A"
+            required
+          />
+          <p class="field-error" data-error-for="fullName"></p>
+        </div>
+
+        <!-- Trường: Email -->
+        <div class="form-group">
+          <label class="form-label" for="email">Email <span class="required">*</span></label>
+          <input
+            class="form-input"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="ban@example.com"
+            required
+          />
+          <p class="field-error" data-error-for="email"></p>
+        </div>
+
+        <!-- Trường: Chủ đề (dropdown) -->
+        <div class="form-group">
+          <label class="form-label" for="subject">Chủ đề <span class="required">*</span></label>
+          <select class="form-input" id="subject" name="subject" required>
+            <option value="">-- Chọn chủ đề --</option>
+            <option value="hop-tac">Hợp tác</option>
+            <option value="hoi-thong-tin">Hỏi thông tin</option>
+            <option value="khac">Khác</option>
+          </select>
+          <p class="field-error" data-error-for="subject"></p>
+        </div>
+
+        <!-- Trường: Tin nhắn -->
+        <div class="form-group">
+          <label class="form-label" for="message">Tin nhắn <span class="required">*</span></label>
+          <textarea
+            class="form-input form-textarea"
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Nội dung tin nhắn (tối thiểu 10 ký tự)..."
+            required
+          ></textarea>
+          <p class="field-error" data-error-for="message"></p>
+        </div>
+
+        <!-- Nút gửi màu xanh, có spinner khi đang gửi -->
+        <button type="submit" class="btn-submit" id="submitButton">
+          <span class="btn-spinner" aria-hidden="true"></span>
+          <span class="btn-label">Gửi tin nhắn</span>
+        </button>
+
+        <!-- Vùng hiển thị thông báo kết quả (thành công/lỗi) -->
+        <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Chân trang -->
+  <footer class="site-footer">
+    <p>© 2026 Trần Thái Hoàng Phát · Portfolio cá nhân</p>
+  </footer>
+
+  <!-- File JS xử lý dark mode -->
+  <script src="../js/theme.js"></script>
+  <!-- File JS xử lý validate và gửi form -->
+  <script src="../js/main.js"></script>
+</body>
+</html>

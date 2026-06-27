@@ -1,0 +1,166 @@
+/* components.css — Style cho các thành phần (form liên hệ, nút, thông báo) */
+
+/* ===== Liên kết đang được chọn trên thanh điều hướng ===== */
+.nav-active {
+  color: var(--color-primary) !important;
+}
+
+/* ===== Khung phần liên hệ ===== */
+.contact-section {
+  max-width: 640px;
+}
+
+.contact-intro {
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+/* ===== Form liên hệ ===== */
+.contact-form {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-group {
+  margin-bottom: 1.3rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: var(--color-text);
+}
+
+/* Dấu bắt buộc màu đỏ */
+.required {
+  color: #e5484d;
+}
+
+/* Ô nhập liệu chung (input, select, textarea) */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(79, 109, 245, 0.18);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Ô nhập đang có lỗi: viền đỏ */
+.form-input.has-error {
+  border-color: #e5484d;
+  box-shadow: 0 0 0 3px rgba(229, 72, 77, 0.15);
+}
+
+/* Dòng báo lỗi dưới mỗi trường */
+.field-error {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: #e5484d;
+  min-height: 1em;
+}
+
+/* ===== Nút gửi màu xanh ===== */
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+/* ===== Loading spinner trong nút ===== */
+.btn-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  /* Mặc định ẩn, chỉ hiện khi đang gửi */
+  display: none;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Khi nút đang ở trạng thái gửi: hiện spinner */
+.btn-submit.is-loading .btn-spinner {
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Thông báo kết quả gửi form ===== */
+.form-status {
+  margin-top: 1.2rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: center;
+  /* Mặc định ẩn khi chưa có thông báo */
+  display: none;
+}
+
+/* Thông báo thành công: nền xanh */
+.form-status.is-success {
+  display: block;
+  color: #1a7f4b;
+  background-color: #e3f9ec;
+  border: 1px solid #b6ecca;
+}
+
+/* Thông báo lỗi: nền đỏ */
+.form-status.is-error {
+  display: block;
+  color: #b42318;
+  background-color: #fdecec;
+  border: 1px solid #f6c9c6;
+}
+
+/* ===== Responsive cho điện thoại ===== */
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 1.4rem;
+  }
+}

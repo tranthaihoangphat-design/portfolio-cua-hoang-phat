@@ -1,0 +1,328 @@
+/* ===== Biến màu cho chế độ sáng (mặc định) ===== */
+:root {
+  --color-bg: #f7f8fc;
+  --color-surface: #ffffff;
+  --color-text: #1f2430;
+  --color-text-muted: #5b6472;
+  --color-primary: #4f6df5;
+  --color-primary-hover: #3b56d6;
+  --color-border: #e6e9f2;
+  --color-tag-bg: #eef1ff;
+  --color-tag-text: #4f6df5;
+  --shadow-card: 0 8px 24px rgba(31, 36, 48, 0.08);
+  --shadow-toggle: 0 4px 14px rgba(31, 36, 48, 0.15);
+}
+
+/* ===== Biến màu cho chế độ tối ===== */
+html[data-theme="dark"] {
+  --color-bg: #11151c;
+  --color-surface: #1b212c;
+  --color-text: #e8ecf4;
+  --color-text-muted: #9aa4b6;
+  --color-primary: #7e93ff;
+  --color-primary-hover: #97a8ff;
+  --color-border: #2a3140;
+  --color-tag-bg: #232b3a;
+  --color-tag-text: #97a8ff;
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-toggle: 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Reset cơ bản ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", system-ui, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  /* Chuyển màu mượt khi đổi sáng/tối */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== Nút chuyển dark mode ở góc trên bên phải ===== */
+.theme-toggle {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 1000;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-toggle);
+  cursor: pointer;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.08);
+}
+
+/* Mặc định (sáng): hiện mặt trăng, ẩn mặt trời */
+.theme-toggle .icon-sun {
+  display: none;
+}
+.theme-toggle .icon-moon {
+  display: inline;
+}
+
+/* Khi đang ở chế độ tối: hiện mặt trời, ẩn mặt trăng */
+html[data-theme="dark"] .theme-toggle .icon-sun {
+  display: inline;
+}
+html[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+/* ===== Thanh điều hướng ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-menu {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+
+/* ===== Phần hero ===== */
+.hero {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.hero-greeting {
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.hero-name {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero-role {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== Khối section chung ===== */
+.section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+/* ===== Lưới các card ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ===== Card sở thích ===== */
+.hobby-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.8rem;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.hobby-card:hover {
+  transform: translateY(-6px);
+}
+
+.card-icon {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== Card dự án ===== */
+.project-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-thumb {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  background: linear-gradient(135deg, var(--color-tag-bg), var(--color-surface));
+}
+
+.project-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== Nhãn (tag) công nghệ ===== */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+}
+
+/* ===== Chân trang ===== */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+/* ===== Hiệu ứng xuất hiện khi cuộn trang ===== */
+/* Trạng thái ban đầu: ẩn, dịch xuống dưới */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Trạng thái khi đã xuất hiện trong khung nhìn */
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tôn trọng người dùng tắt hiệu ứng chuyển động */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ===== Responsive cho điện thoại ===== */
+@media (max-width: 600px) {
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding: 4rem 1.2rem 3rem;
+  }
+
+  .section {
+    padding: 3rem 1.2rem;
+  }
+}

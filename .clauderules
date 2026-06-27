@@ -1,0 +1,15 @@
+# .clauderules — Portfolio Cá Nhân Học Sinh
+# File này định nghĩa các quy tắc bắt buộc cho toàn bộ project.
+# Claude phải tuân theo những quy tắc này trong mọi thay đổi.
+
+Đây là project Portfolio cá nhân của học sinh.
+
+Quy tắc bắt buộc:
+- Tất cả CSS phải đặt trong thư mục css/ - không bao giờ viết style inline trong HTML
+- Tất cả JavaScript phải đặt trong thư mục js/ - không viết script trong HTML
+- Tất cả hình ảnh đặt trong images/ - dùng đường dẫn tương đối
+- Comment bằng tiếng Việt để dễ đọc
+- Dùng class name bằng tiếng Anh, rõ nghĩa (ví dụ: .card-container, .nav-menu)
+- Không dùng thư viện ngoài - CSS và JS thuần
+- Luôn đảm bảo responsive trên điện thoại
+- Font chữ: sử dụng Google Fonts (Inter hoặc Poppins)

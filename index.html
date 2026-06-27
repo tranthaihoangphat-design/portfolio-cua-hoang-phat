@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Cho phép responsive trên điện thoại -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Trần Thái Hoàng Phát</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- File CSS chính -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Nút chuyển dark mode đặt ở góc trên bên phải -->
+  <button
+    id="themeToggle"
+    class="theme-toggle"
+    type="button"
+    aria-label="Chuyển chế độ sáng/tối"
+    title="Chuyển chế độ sáng/tối"
+  >
+    <!-- Icon mặt trời (hiện ở chế độ tối, bấm để sang sáng) -->
+    <span class="icon-sun" aria-hidden="true">☀️</span>
+    <!-- Icon mặt trăng (hiện ở chế độ sáng, bấm để sang tối) -->
+    <span class="icon-moon" aria-hidden="true">🌙</span>
+  </button>
+
+  <!-- Thanh điều hướng -->
+  <header class="site-header">
+    <nav class="nav-menu">
+      <a class="nav-brand" href="#home">Hoàng Phát</a>
+      <ul class="nav-links">
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#hobbies">Sở thích</a></li>
+        <li><a href="#projects">Dự án</a></li>
+        <li><a href="pages/contact.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Phần mở đầu (hero) -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <p class="hero-greeting">Xin chào, mình là</p>
+        <h1 class="hero-name">Trần Thái Hoàng Phát</h1>
+        <p class="hero-role">Học sinh &amp; người yêu thích thiết kế, lập trình</p>
+        <a href="#projects" class="btn-primary">Xem dự án của mình</a>
+      </div>
+    </section>
+
+    <!-- Phần giới thiệu -->
+    <section id="about" class="section">
+      <h2 class="section-title reveal">Giới thiệu</h2>
+      <div class="about-content reveal">
+        <p>
+          Mình là một học sinh đam mê công nghệ và sáng tạo. Mình thích
+          tìm tòi những điều mới, xây dựng các sản phẩm nhỏ và liên tục
+          học hỏi mỗi ngày. Trang portfolio này là nơi mình lưu lại
+          những sở thích và dự án của bản thân.
+        </p>
+      </div>
+    </section>
+
+    <!-- Phần sở thích -->
+    <section id="hobbies" class="section">
+      <h2 class="section-title reveal">Sở thích</h2>
+      <div class="card-grid">
+        <article class="hobby-card reveal">
+          <div class="card-icon">📚</div>
+          <h3 class="card-title">Đọc sách</h3>
+          <p class="card-text">
+            Thích đọc sách về khoa học, lịch sử và phát triển bản thân.
+          </p>
+        </article>
+        <article class="hobby-card reveal">
+          <div class="card-icon">🎮</div>
+          <h3 class="card-title">Chơi game</h3>
+          <p class="card-text">
+            Yêu thích các trò chơi giải đố và chiến thuật rèn tư duy.
+          </p>
+        </article>
+        <article class="hobby-card reveal">
+          <div class="card-icon">🎵</div>
+          <h3 class="card-title">Âm nhạc</h3>
+          <p class="card-text">
+            Nghe nhạc mỗi ngày và đang tập chơi một vài nhạc cụ.
+          </p>
+        </article>
+        <article class="hobby-card reveal">
+          <div class="card-icon">⚽</div>
+          <h3 class="card-title">Thể thao</h3>
+          <p class="card-text">
+            Chơi bóng đá và cầu lông để giữ sức khỏe và tinh thần.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Phần dự án -->
+    <section id="projects" class="section">
+      <h2 class="section-title reveal">Dự án</h2>
+      <div class="card-grid">
+        <article class="project-card reveal">
+          <div class="project-thumb">🌐</div>
+          <div class="project-body">
+            <h3 class="card-title">Trang web lớp học</h3>
+            <p class="card-text">
+              Website giới thiệu lớp với thời khóa biểu và album ảnh.
+            </p>
+            <div class="tag-list">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+            </div>
+          </div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-thumb">🤖</div>
+          <div class="project-body">
+            <h3 class="card-title">Chatbot mini</h3>
+            <p class="card-text">
+              Chatbot trả lời câu hỏi đơn giản viết bằng JavaScript thuần.
+            </p>
+            <div class="tag-list">
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-thumb">📝</div>
+          <div class="project-body">
+            <h3 class="card-title">Ứng dụng ghi chú</h3>
+            <p class="card-text">
+              Ứng dụng ghi chú lưu dữ liệu ngay trên trình duyệt.
+            </p>
+            <div class="tag-list">
+              <span class="tag">HTML</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Chân trang -->
+  <footer class="site-footer">
+    <p>© 2026 Trần Thái Hoàng Phát · Portfolio cá nhân</p>
+  </footer>
+
+  <!-- File JS xử lý dark mode -->
+  <script src="js/theme.js"></script>
+  <!-- File JS xử lý animation cuộn trang -->
+  <script src="js/animation.js"></script>
+</body>
+</html>
