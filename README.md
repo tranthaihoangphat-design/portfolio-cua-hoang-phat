@@ -36,7 +36,15 @@ Chào mừng bạn đến với dự án **Portfolio Cá Nhân** của **Trần 
 
 ### 💻 Dự Án
 
-* Tổng hợp 2 - 3 dự án Python đã thực hiện
+* Tổng hợp dựa án đã Thực hiện
+* file:///C:/Users/ADMIN/Downloads/ng_d_ng_t_m_t_t_minh_h_a_b_ng_ai.html
+* file:///C:/Users/ADMIN/Downloads/trang_web_t_v_n_v_t_li_u_nh_tr_ki_u_h_nh.html
+* file:///C:/Users/ADMIN/Downloads/tr_ch_i_x_n_c.html
+* file:///C:/Users/ADMIN/Downloads/word_scramble_game.html
+* file:///C:/Users/ADMIN/Downloads/real_estate_universe_ultimate_ai.html
+* file:///C:/Users/ADMIN/Downloads/tr_ch_i_b_t_qu_may_m_n.html
+* file:///C:/Users/ADMIN/Downloads/flappy_bird_ultimate_journey.html
+* file:///C:/Users/ADMIN/Downloads/halloween_fantasy_ultimate_saga.html
 
 ### 📬 Liên Hệ
 
