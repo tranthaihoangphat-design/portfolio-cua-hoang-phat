@@ -36,7 +36,7 @@ Chào mừng bạn đến với dự án **Portfolio Cá Nhân** của **Trần 
 
 ### 💻 Dự Án
 
-* Tổng hợp dựa án đã Thực hiện
+  Tổng hợp dự án đã thực hiện:
 * file:///C:/Users/ADMIN/Downloads/ng_d_ng_t_m_t_t_minh_h_a_b_ng_ai.html
 * file:///C:/Users/ADMIN/Downloads/trang_web_t_v_n_v_t_li_u_nh_tr_ki_u_h_nh.html
 * file:///C:/Users/ADMIN/Downloads/tr_ch_i_x_n_c.html
